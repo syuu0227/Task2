@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var numTextField1: UITextField!
     @IBOutlet weak var numTextField2: UITextField!
-    @IBOutlet weak var ansLabel: UILabel!
+    @IBOutlet weak var answerLabel: UILabel!//単語は省略しないことが多い
     @IBOutlet weak var selectSegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
@@ -25,28 +25,32 @@ class ViewController: UIViewController {
     
     
     @IBAction func calculation(_ sender: Any) {
-        var ans = 0.0
+//        var ans = 0.0
+        
+        let answer: Double
+        
         let first = Double(numTextField1.text!) ?? 0.0
         let second = Double(numTextField2.text!) ?? 0.0
         
         switch selectSegmentedControl.selectedSegmentIndex {
         case 0:
-            ans = first + second
+            answer = first + second
         case 1:
-            ans = first - second
+            answer = first - second
         case 2:
-            ans = first * second
+            answer = first * second
         case 3:
             if second == 0.0 {
-                ansLabel.text = "割る数には0以外を入力して下さい"
+                answerLabel.text = "割る数には0以外を入力して下さい"
                 return
             }
-            ans = first / second
+            answer = first / second
         default:
-            break
+//            break // breakだと下の行が実行されてエラーになる。answerに何も入っていない。
+            return
         }
         
-        ansLabel.text = String(ans)
+        answerLabel.text = String(answer)
         
     }
 

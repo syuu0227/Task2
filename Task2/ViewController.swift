@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     
     @IBAction func calculation(_ sender: Any) {
         var ans = 0.0
-        let first = Double(self.numTextField1.text!) ?? 0.0
+        let first = Double(numTextField1.text!) ?? 0.0
         let second = Double(numTextField2.text!) ?? 0.0
         
         switch selectSegmentedControl.selectedSegmentIndex {

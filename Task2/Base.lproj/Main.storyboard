@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,74 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Task2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="72U-J6-CJV">
+                                <rect key="frame" x="100" y="59" width="214" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qFp-7U-0SS">
+                                <rect key="frame" x="100" y="108" width="214" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F5U-4o-olS">
+                                <rect key="frame" x="100" y="157" width="214" height="32"/>
+                                <segments>
+                                    <segment title="+"/>
+                                    <segment title="-"/>
+                                    <segment title="×"/>
+                                    <segment title="÷"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahB-Vp-Ei6">
+                                <rect key="frame" x="180" y="203" width="54" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="calculation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4BT-5d-Exu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBa-B3-Tgy">
+                                <rect key="frame" x="10" y="252" width="394" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qFp-7U-0SS" firstAttribute="top" secondItem="72U-J6-CJV" secondAttribute="bottom" constant="15" id="1er-z5-yNX"/>
+                            <constraint firstItem="72U-J6-CJV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Di2-ve-6oG"/>
+                            <constraint firstItem="qFp-7U-0SS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="OCz-6M-TqS"/>
+                            <constraint firstItem="F5U-4o-olS" firstAttribute="top" secondItem="qFp-7U-0SS" secondAttribute="bottom" constant="15" id="QeZ-oY-4dP"/>
+                            <constraint firstItem="lBa-B3-Tgy" firstAttribute="top" secondItem="ahB-Vp-Ei6" secondAttribute="bottom" constant="15" id="RXk-a4-EWe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lBa-B3-Tgy" secondAttribute="trailing" constant="10" id="SL0-G1-Fkq"/>
+                            <constraint firstItem="72U-J6-CJV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="Vau-03-BYt"/>
+                            <constraint firstItem="lBa-B3-Tgy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="bUw-hh-dzS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F5U-4o-olS" secondAttribute="trailing" constant="100" id="gbS-eH-cpF"/>
+                            <constraint firstItem="F5U-4o-olS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="l0i-AC-aIs"/>
+                            <constraint firstItem="ahB-Vp-Ei6" firstAttribute="top" secondItem="F5U-4o-olS" secondAttribute="bottom" constant="15" id="lXh-hI-UHJ"/>
+                            <constraint firstItem="ahB-Vp-Ei6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rk1-W0-JxE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="72U-J6-CJV" secondAttribute="trailing" constant="100" id="xsU-Vc-aD4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qFp-7U-0SS" secondAttribute="trailing" constant="100" id="zKL-bt-edv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="ansLabel" destination="lBa-B3-Tgy" id="HEd-84-uxM"/>
+                        <outlet property="numTextField1" destination="72U-J6-CJV" id="96g-7a-MG8"/>
+                        <outlet property="numTextField2" destination="qFp-7U-0SS" id="nbv-IQ-ccB"/>
+                        <outlet property="selectSegmentedControl" destination="F5U-4o-olS" id="6wB-Ja-sYm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="160.86956521739131" y="140.625"/>
         </scene>
     </scenes>
 </document>
